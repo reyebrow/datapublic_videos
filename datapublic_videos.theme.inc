@@ -8,43 +8,16 @@
 
 
 /**
- * Implements hook_theme().
- * Adding re_oembed_mods oembed field template suggestion.
- */ 
-/*
-function re_oembed_mods_theme($existing) {
-  $module_theme_path = drupal_get_path('module', 're_oembed_mods') . '/theme';
-  $item = $existing['oembed'];
-  $item['path'] = drupal_get_path('module', 're_oembed_mods') ."/theme";
-  return array("oembed" => $item); 
-}
-*/
-
-
-/**
- * Implements of hook_theme().
+ * Implements hook_theme_registry_alter().
+ *
+ * @todo:
+ *    -- revisit this in hook_theme(); it doesn't seem to follow the same hierarchy
+ *       as other cck fields for template names (i.e. when configured in hook_theme
+ *       as 'oembed__field_video_link' it's not used. Given that we're using the
+ *       hook_theme_registry_alter() method, themes will need to implement one of
+ *       their own (or perhaps a preprocess function) in order to override this!
  */
-function datapublic_videos_theme($existing, $type, $theme, $path) {
-  $oembed_field = isset($existing['oembed']) ? $existing['oembed'] : array();
-  $oembed_field['path'] = $path . '/theme';
-  $oembed_field['template'] = 'oembed--field-video-link';
-  dpm($oembed_field);
-  return array(
-    'oembed__field_video_link' => $oembed_field,
-  );
-
-  /*
-  // Provide template for photo gallery image field:
-  $oembed_field = isset($existing['field']) ? $existing['field'] : array();
-  $oembed_field['path'] = $path . '/theme';
-  $oembed_field['template'] = 'field--field-photo-gallery-image';
-  return array(
-    'field__field_photo_gallery_image' => $oembed_field,
-  );
-  */
-} // datapublic_videos_theme()
-
 function datapublic_videos_theme_registry_alter(&$theme_registry) {
-  //dpm($foo['oembed']);
-  //dpm($theme_registry);
-}
+  $theme_registry['oembed']['path'] = drupal_get_path('module', 'datapublic_videos') . '/theme';
+  $theme_registry['oembed']['template'] = 'oembed';
+} // datapublic_videos_theme_registry_alter()
