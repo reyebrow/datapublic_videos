@@ -1,9 +1,17 @@
 core = "7.x"
 dependencies[] = "features"
 dependencies[] = "image"
+; Temporarily rely on unstable version of media module and file_entity module
+; to make remote_stream_wrapper usable.
+;
+; @todo Resolve this as remote_stream_wrapper fixes its class-loading issue.
+;
+dependencies[] = "file_entity"
+dependencies[] = "media (7.x-2.0)"
 dependencies[] = "oembed"
 dependencies[] = "oembedcore"
 dependencies[] = "oembedfield"
+dependencies[] = "oembed_thumbnail"
 dependencies[] = "strongarm"
 dependencies[] = "views"
 description = "Provides content types, views, contexts, libraries and logic for displaying videos and lists of videos."
@@ -32,7 +40,7 @@ features[variable][] = "pathauto_node_video_pattern"
 features[variable][] = "save_continue_video"
 features[variable][] = "show_preview_changes_video"
 features[views_view][] = "videos"
-name = "datapublic_videos"
+name = "Datapublic Videos"
 package = "Datapublic"
 project = "datapublic_videos"
 version = "7.x-1.0"
