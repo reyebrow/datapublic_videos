@@ -12,7 +12,7 @@ function datapublic_videos_views_default_views() {
 
   $view = new view;
   $view->name = 'videos';
-  $view->description = '';
+  $view->description = 'Default views for Video listings.';
   $view->tag = 'default';
   $view->base_table = 'node';
   $view->human_name = 'Videos';
