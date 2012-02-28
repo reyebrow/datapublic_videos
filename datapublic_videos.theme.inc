@@ -7,6 +7,14 @@
 
 
 /**
+ * Implements oembed_preprocess_oembed().
+ */
+function datapublic_videos_preprocess_oembed(&$vars, $hook) {
+  $vars['content_attributes_array']['class'] = trim($vars['content_attributes_array']['class'] . ' ' . 'flex-video');
+} // datapublic_videos_preprocess_oembed()
+
+
+/**
  * Implements hook_theme_registry_alter().
  *
  * @todo:
