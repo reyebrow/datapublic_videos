@@ -1,6 +1,13 @@
 core = "7.x"
 dependencies[] = "features"
 dependencies[] = "image"
+; Temporarily rely on unstable version of media module and file_entity module
+; to make remote_stream_wrapper usable.
+;
+; @todo Resolve this as remote_stream_wrapper fixes its class-loading issue.
+;
+dependencies[] = "file_entity"
+dependencies[] = "media"
 dependencies[] = "oembed"
 dependencies[] = "oembedcore"
 dependencies[] = "oembedfield"
@@ -34,6 +41,6 @@ features[variable][] = "save_continue_video"
 features[variable][] = "show_preview_changes_video"
 features[views_view][] = "videos"
 name = "Datapublic Videos"
-package = "Datapublic"
+package = "DataPublic"
 project = "datapublic_videos"
 version = "7.x-1.0-beta1"
