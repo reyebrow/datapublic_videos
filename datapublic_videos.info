@@ -7,7 +7,6 @@ dependencies[] = "image"
 ; @todo Resolve this as remote_stream_wrapper fixes its class-loading issue.
 ;
 dependencies[] = "file_entity"
-dependencies[] = "media"
 dependencies[] = "oembed"
 dependencies[] = "oembedcore"
 dependencies[] = "oembedfield"
