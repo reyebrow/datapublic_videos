@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * datapublic_videos.features.menu_links.inc
+ * datapublic_videos.features.content_menu_links.inc
  */
 
 /**
- * Implements hook_menu_default_menu_links().
+ * Implements hook_content_menu_links_defaults().
  */
-function datapublic_videos_menu_default_menu_links() {
+function datapublic_videos_content_menu_links_defaults() {
   $menu_links = array();
 
   // Exported menu link: main-menu:videos
@@ -27,7 +27,7 @@ function datapublic_videos_menu_default_menu_links() {
     'has_children' => '0',
     'expanded' => '0',
     'weight' => '-48',
-    'parent_path' => 'node/43',
+    'parent_path' => 'node-name/mediaroom_page',
   );
   // Exported menu link: menu-main-menu-mobile-:videos
   $menu_links['menu-main-menu-mobile-:videos'] = array(
@@ -46,7 +46,7 @@ function datapublic_videos_menu_default_menu_links() {
     'has_children' => '0',
     'expanded' => '0',
     'weight' => '-48',
-    'parent_path' => 'node/43',
+    'parent_path' => 'node-name/mediaroom_page',
   );
   // Translatables
   // Included for use with string extractors like potx.
